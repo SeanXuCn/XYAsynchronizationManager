@@ -1,4 +1,4 @@
-<p align="center" >iOS入门级攻城尸</p>
+<p align="center" ><b><font size="8">iOS入门级攻城尸</font></b></p>
 <p align="center" >
   <img src="iOSLogo.jpg" title="XYAsynchronousManager logo" float=left>
 </p>
@@ -41,5 +41,4 @@
 
 ## Communication
 - 有任何问题欢迎加我的简书和微博讨论
-- 简书:[iOS入门级攻城尸](http://www.jianshu.com/u/4c5a9f6f6831)
-- 微博:[iOS入门级攻城尸](http://weibo.com/xuyang186)
+- iOS入门级攻城尸的:[简书](http://www.jianshu.com/u/4c5a9f6f6831)、[微博](http://weibo.com/xuyang186)
