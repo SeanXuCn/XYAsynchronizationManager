@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		296FC6A91E8D014900144CFF /* XYAsynchronizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 296FC6A41E8D014900144CFF /* XYAsynchronizationManager.m */; };
+		296FC6AA1E8D014900144CFF /* XYAsynchronousCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 296FC6A61E8D014900144CFF /* XYAsynchronousCompat.m */; };
+		296FC6AB1E8D014900144CFF /* XYSynchronizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 296FC6A81E8D014900144CFF /* XYSynchronizer.m */; };
 		29759CB51E8B9803006A270C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29759CB41E8B9803006A270C /* main.m */; };
 		29759CB81E8B9803006A270C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29759CB71E8B9803006A270C /* AppDelegate.m */; };
 		29759CBB1E8B9803006A270C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29759CBA1E8B9803006A270C /* ViewController.m */; };
@@ -14,13 +17,16 @@
 		29759CC01E8B9803006A270C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29759CBF1E8B9803006A270C /* Assets.xcassets */; };
 		29759CC31E8B9803006A270C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29759CC11E8B9803006A270C /* LaunchScreen.storyboard */; };
 		29759CCB1E8B981F006A270C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29759CCA1E8B981F006A270C /* Default-568h@2x.png */; };
-		29759CD21E8B9DDA006A270C /* XYAsynchronousManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29759CCF1E8B9DDA006A270C /* XYAsynchronousManager.m */; };
-		29759CD31E8B9DDA006A270C /* XYSynchronizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29759CD11E8B9DDA006A270C /* XYSynchronizer.m */; };
-		29759CD71E8BABC3006A270C /* XYAsynchronousCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 29759CD61E8BABC3006A270C /* XYAsynchronousCompat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		29759CB01E8B9803006A270C /* XYAsynchronousManager Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XYAsynchronousManager Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		296FC6A31E8D014900144CFF /* XYAsynchronizationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYAsynchronizationManager.h; sourceTree = "<group>"; };
+		296FC6A41E8D014900144CFF /* XYAsynchronizationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYAsynchronizationManager.m; sourceTree = "<group>"; };
+		296FC6A51E8D014900144CFF /* XYAsynchronousCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYAsynchronousCompat.h; sourceTree = "<group>"; };
+		296FC6A61E8D014900144CFF /* XYAsynchronousCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYAsynchronousCompat.m; sourceTree = "<group>"; };
+		296FC6A71E8D014900144CFF /* XYSynchronizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYSynchronizer.h; sourceTree = "<group>"; };
+		296FC6A81E8D014900144CFF /* XYSynchronizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYSynchronizer.m; sourceTree = "<group>"; };
+		29759CB01E8B9803006A270C /* XYAsynchronizationManager Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XYAsynchronizationManager Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29759CB41E8B9803006A270C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29759CB61E8B9803006A270C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		29759CB71E8B9803006A270C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -31,12 +37,6 @@
 		29759CC21E8B9803006A270C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29759CC41E8B9803006A270C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29759CCA1E8B981F006A270C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		29759CCE1E8B9DDA006A270C /* XYAsynchronousManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYAsynchronousManager.h; sourceTree = "<group>"; };
-		29759CCF1E8B9DDA006A270C /* XYAsynchronousManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYAsynchronousManager.m; sourceTree = "<group>"; };
-		29759CD01E8B9DDA006A270C /* XYSynchronizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYSynchronizer.h; sourceTree = "<group>"; };
-		29759CD11E8B9DDA006A270C /* XYSynchronizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYSynchronizer.m; sourceTree = "<group>"; };
-		29759CD51E8BABC3006A270C /* XYAsynchronousCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYAsynchronousCompat.h; sourceTree = "<group>"; };
-		29759CD61E8BABC3006A270C /* XYAsynchronousCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYAsynchronousCompat.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +50,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		296FC6A21E8D014900144CFF /* XYAsynchronizationManager */ = {
+			isa = PBXGroup;
+			children = (
+				296FC6A31E8D014900144CFF /* XYAsynchronizationManager.h */,
+				296FC6A41E8D014900144CFF /* XYAsynchronizationManager.m */,
+				296FC6A51E8D014900144CFF /* XYAsynchronousCompat.h */,
+				296FC6A61E8D014900144CFF /* XYAsynchronousCompat.m */,
+				296FC6A71E8D014900144CFF /* XYSynchronizer.h */,
+				296FC6A81E8D014900144CFF /* XYSynchronizer.m */,
+			);
+			path = XYAsynchronizationManager;
+			sourceTree = "<group>";
+		};
 		29759CA71E8B9803006A270C = {
 			isa = PBXGroup;
 			children = (
@@ -61,7 +74,7 @@
 		29759CB11E8B9803006A270C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				29759CB01E8B9803006A270C /* XYAsynchronousManager Demo.app */,
+				29759CB01E8B9803006A270C /* XYAsynchronizationManager Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,7 +82,7 @@
 		29759CB21E8B9803006A270C /* XYAsynchronousManager Demo */ = {
 			isa = PBXGroup;
 			children = (
-				29759CCC1E8B9DDA006A270C /* XYAsynchronousManager */,
+				296FC6A21E8D014900144CFF /* XYAsynchronizationManager */,
 				29759CB61E8B9803006A270C /* AppDelegate.h */,
 				29759CB71E8B9803006A270C /* AppDelegate.m */,
 				29759CB91E8B9803006A270C /* ViewController.h */,
@@ -92,25 +105,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		29759CCC1E8B9DDA006A270C /* XYAsynchronousManager */ = {
-			isa = PBXGroup;
-			children = (
-				29759CD51E8BABC3006A270C /* XYAsynchronousCompat.h */,
-				29759CD61E8BABC3006A270C /* XYAsynchronousCompat.m */,
-				29759CCE1E8B9DDA006A270C /* XYAsynchronousManager.h */,
-				29759CCF1E8B9DDA006A270C /* XYAsynchronousManager.m */,
-				29759CD01E8B9DDA006A270C /* XYSynchronizer.h */,
-				29759CD11E8B9DDA006A270C /* XYSynchronizer.m */,
-			);
-			path = XYAsynchronousManager;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		29759CAF1E8B9803006A270C /* XYAsynchronousManager Demo */ = {
+		29759CAF1E8B9803006A270C /* XYAsynchronizationManager Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29759CC71E8B9803006A270C /* Build configuration list for PBXNativeTarget "XYAsynchronousManager Demo" */;
+			buildConfigurationList = 29759CC71E8B9803006A270C /* Build configuration list for PBXNativeTarget "XYAsynchronizationManager Demo" */;
 			buildPhases = (
 				29759CAC1E8B9803006A270C /* Sources */,
 				29759CAD1E8B9803006A270C /* Frameworks */,
@@ -120,9 +120,9 @@
 			);
 			dependencies = (
 			);
-			name = "XYAsynchronousManager Demo";
+			name = "XYAsynchronizationManager Demo";
 			productName = "XYAsynchronousManager Demo";
-			productReference = 29759CB01E8B9803006A270C /* XYAsynchronousManager Demo.app */;
+			productReference = 29759CB01E8B9803006A270C /* XYAsynchronizationManager Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -141,7 +141,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 29759CAB1E8B9803006A270C /* Build configuration list for PBXProject "XYAsynchronousManager Demo" */;
+			buildConfigurationList = 29759CAB1E8B9803006A270C /* Build configuration list for PBXProject "XYAsynchronizationManager Demo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -154,7 +154,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				29759CAF1E8B9803006A270C /* XYAsynchronousManager Demo */,
+				29759CAF1E8B9803006A270C /* XYAsynchronizationManager Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -178,11 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296FC6AA1E8D014900144CFF /* XYAsynchronousCompat.m in Sources */,
 				29759CBB1E8B9803006A270C /* ViewController.m in Sources */,
+				296FC6A91E8D014900144CFF /* XYAsynchronizationManager.m in Sources */,
 				29759CB81E8B9803006A270C /* AppDelegate.m in Sources */,
-				29759CD71E8BABC3006A270C /* XYAsynchronousCompat.m in Sources */,
-				29759CD21E8B9DDA006A270C /* XYAsynchronousManager.m in Sources */,
-				29759CD31E8B9DDA006A270C /* XYSynchronizer.m in Sources */,
+				296FC6AB1E8D014900144CFF /* XYSynchronizer.m in Sources */,
 				29759CB51E8B9803006A270C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,7 +324,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		29759CAB1E8B9803006A270C /* Build configuration list for PBXProject "XYAsynchronousManager Demo" */ = {
+		29759CAB1E8B9803006A270C /* Build configuration list for PBXProject "XYAsynchronizationManager Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				29759CC51E8B9803006A270C /* Debug */,
@@ -333,7 +333,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29759CC71E8B9803006A270C /* Build configuration list for PBXNativeTarget "XYAsynchronousManager Demo" */ = {
+		29759CC71E8B9803006A270C /* Build configuration list for PBXNativeTarget "XYAsynchronizationManager Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				29759CC81E8B9803006A270C /* Debug */,

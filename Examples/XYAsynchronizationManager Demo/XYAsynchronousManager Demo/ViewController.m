@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "XYAsynchronousManager.h"
+#import "XYAsynchronizationManager.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
@@ -33,7 +33,7 @@
     self.isRunning = YES;
     
     //1、设置总并发数量，并给这组并发设置一个唯一id
-    [[XYAsynchronousManager sharedManager] xy_synchronizeWithIdentifier:@"oneGroup" totalCount:self.taskArray.count doneBlock:^{
+    [[XYAsynchronizationManager sharedManager] xy_synchronizeWithIdentifier:@"oneGroup" totalCount:self.taskArray.count doneBlock:^{
         XYAM_Log(@"oneGroup Tasks Done!");
         self.isRunning = NO;
     }];
@@ -43,7 +43,7 @@
             XYAM_Log(@"Task %@ executed", obj);
             
             //2、当你完成一步操作的时候，告知manager你完成了一步操作，你可以完全不考虑当前是在什么线程内，只需要直接调用即可。
-            [[XYAsynchronousManager sharedManager] xy_synchronizeOneStepByIdentifier:@"oneGroup"];
+            [[XYAsynchronizationManager sharedManager] xy_synchronizeOneStepByIdentifier:@"oneGroup"];
         });
     }];
 }
@@ -52,13 +52,13 @@
     if (self.isRunning) return;
     self.isRunning = YES;
     //1、设置第一组总并发数量，并给这组并发设置一个唯一id
-    [[XYAsynchronousManager sharedManager] xy_synchronizeWithIdentifier:@"groupOne" totalCount:self.taskArray.count doneBlock:^{
+    [[XYAsynchronizationManager sharedManager] xy_synchronizeWithIdentifier:@"groupOne" totalCount:self.taskArray.count doneBlock:^{
         XYAM_Log(@"groupOne Tasks Done!");
         self.isRunning = NO;
     }];
     
     //2、设置第二组总并发数量，并给这组并发设置一个唯一id
-    [[XYAsynchronousManager sharedManager] xy_synchronizeWithIdentifier:@"groupTwo" totalCount:self.taskArray.count doneBlock:^{
+    [[XYAsynchronizationManager sharedManager] xy_synchronizeWithIdentifier:@"groupTwo" totalCount:self.taskArray.count doneBlock:^{
         XYAM_Log(@"groupTwo Tasks Done!");
         self.isRunning = NO;
     }];
@@ -69,7 +69,7 @@
             XYAM_Log(@"groupOne Task %@ executed", obj);
             
             //2、当你完成一步操作的时候，告知manager你完成了一步操作，你可以完全不考虑当前是在什么线程内，只需要直接调用即可。
-            [[XYAsynchronousManager sharedManager] xy_synchronizeOneStepByIdentifier:@"groupOne"];
+            [[XYAsynchronizationManager sharedManager] xy_synchronizeOneStepByIdentifier:@"groupOne"];
         });
     }];
     
@@ -79,7 +79,7 @@
             XYAM_Log(@"groupTwo Task %@ executed", obj);
             
             //2、当你完成一步操作的时候，告知manager你完成了一步操作，你可以完全不考虑当前是在什么线程内，只需要直接调用即可。
-            [[XYAsynchronousManager sharedManager] xy_synchronizeOneStepByIdentifier:@"groupTwo"];
+            [[XYAsynchronizationManager sharedManager] xy_synchronizeOneStepByIdentifier:@"groupTwo"];
         });
     }];
     
@@ -96,7 +96,7 @@
     /** 1、设置第三组总并发数量，并给这组并发设置一个唯一id
      *  这个组里只有两个步骤，第一个步骤是第一组完成，第二个步骤是第二组完成。
      */
-    [[XYAsynchronousManager sharedManager] xy_synchronizeWithIdentifier:@"groupThree" totalCount:2 doneBlock:^{
+    [[XYAsynchronizationManager sharedManager] xy_synchronizeWithIdentifier:@"groupThree" totalCount:2 doneBlock:^{
         
         //组1和组2都完成了
         XYAM_Log(@"groupThree Tasks Done!");
@@ -104,19 +104,19 @@
     }];
     
     //2、设置第一组总并发数量，并给这组并发设置一个唯一id
-    [[XYAsynchronousManager sharedManager] xy_synchronizeWithIdentifier:@"groupOne" totalCount:self.taskArray.count doneBlock:^{
+    [[XYAsynchronizationManager sharedManager] xy_synchronizeWithIdentifier:@"groupOne" totalCount:self.taskArray.count doneBlock:^{
         XYAM_Log(@"groupOne Tasks Done!");
         
         //当你完成一步操作的时候，告知manager你完成了一步操作，你可以完全不考虑当前是在什么线程内，只需要直接调用即可。
-        [[XYAsynchronousManager sharedManager] xy_synchronizeOneStepByIdentifier:@"groupThree"];
+        [[XYAsynchronizationManager sharedManager] xy_synchronizeOneStepByIdentifier:@"groupThree"];
     }];
     
     //3、设置第二组总并发数量，并给这组并发设置一个唯一id
-    [[XYAsynchronousManager sharedManager] xy_synchronizeWithIdentifier:@"groupTwo" totalCount:self.taskArray.count doneBlock:^{
+    [[XYAsynchronizationManager sharedManager] xy_synchronizeWithIdentifier:@"groupTwo" totalCount:self.taskArray.count doneBlock:^{
         XYAM_Log(@"groupTwo Tasks Done!");
         
         //当你完成一步操作的时候，告知manager你完成了一步操作，你可以完全不考虑当前是在什么线程内，只需要直接调用即可。
-        [[XYAsynchronousManager sharedManager] xy_synchronizeOneStepByIdentifier:@"groupThree"];
+        [[XYAsynchronizationManager sharedManager] xy_synchronizeOneStepByIdentifier:@"groupThree"];
     }];
     
     
@@ -126,7 +126,7 @@
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             XYAM_Log(@"groupOne Task %@ executed", obj);
             
-            [[XYAsynchronousManager sharedManager] xy_synchronizeOneStepByIdentifier:@"groupOne"];
+            [[XYAsynchronizationManager sharedManager] xy_synchronizeOneStepByIdentifier:@"groupOne"];
         });
     }];
     
@@ -135,7 +135,7 @@
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             XYAM_Log(@"groupTwo Task %@ executed", obj);
             
-            [[XYAsynchronousManager sharedManager] xy_synchronizeOneStepByIdentifier:@"groupTwo"];
+            [[XYAsynchronizationManager sharedManager] xy_synchronizeOneStepByIdentifier:@"groupTwo"];
         });
     }];
 }

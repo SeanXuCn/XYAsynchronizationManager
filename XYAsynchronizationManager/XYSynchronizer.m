@@ -8,7 +8,7 @@
 
 
 #import "XYSynchronizer.h"
-#import "XYAsynchronousManager.h"
+#import "XYAsynchronizationManager.h"
 #import <pthread.h>
 
 @interface XYSynchronizer()

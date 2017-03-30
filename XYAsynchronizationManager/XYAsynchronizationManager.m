@@ -7,7 +7,7 @@
 //
 
 
-#import "XYAsynchronousManager.h"
+#import "XYAsynchronizationManager.h"
 #import "XYSynchronizer.h"
 
 static dispatch_queue_t XY_ASYNCHRONOUS_MANAGER_SERIAL_QUEUE(){
@@ -19,11 +19,11 @@ static dispatch_queue_t XY_ASYNCHRONOUS_MANAGER_SERIAL_QUEUE(){
     return _XY_ASYNCHRONOUS_MANAGER_SERIAL_QUEUE;
 }
 
-@interface XYAsynchronousManager()<XYSynchronizerDelegate>
+@interface XYAsynchronizationManager()<XYSynchronizerDelegate>
 @property (nonatomic, copy)NSMutableDictionary *Synchronizers;
 @end
 
-@implementation XYAsynchronousManager
+@implementation XYAsynchronizationManager
 
 - (NSString *)version{
     return @"1.0.0";
@@ -31,7 +31,7 @@ static dispatch_queue_t XY_ASYNCHRONOUS_MANAGER_SERIAL_QUEUE(){
 #pragma mark - initialize
 + (instancetype)sharedManager {
     static dispatch_once_t once;
-    static XYAsynchronousManager *instance;
+    static XYAsynchronizationManager *instance;
     dispatch_once(&once, ^{
         instance = [[self alloc] initPrivately];
     });

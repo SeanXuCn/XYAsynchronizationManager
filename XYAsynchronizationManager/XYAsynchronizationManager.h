@@ -25,7 +25,7 @@
 #import "XYAsynchronousCompat.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface XYAsynchronousManager : NSObject
+@interface XYAsynchronizationManager : NSObject
 
 @property (nonatomic, copy, readonly) NSString *version;
 

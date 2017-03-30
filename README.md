@@ -19,15 +19,15 @@
 - [x] 从不死锁!
 
 ## Installation
-- 直接将`XYAsynchronousManager`文件夹拖入项目中即可。
+- 直接将`XYAsynchronizationManager`文件夹拖入项目中即可。
 
 ## How To Use
 
 ```
-#import "XYAsynchronousManager.h"
+#import "XYAsynchronizationManager.h"
 ...
 //1、设置总并发数量，并给这组并发设置一个唯一id
-[[XYAsynchronousManager sharedManager] xy_synchronizeWithIdentifier:@"oneGroup" totalCount:self.taskArray.count doneBlock:^{
+[[XYAsynchronizationManager sharedManager] xy_synchronizeWithIdentifier:@"oneGroup" totalCount:self.taskArray.count doneBlock:^{
     XYAM_Log(@"oneGroup Tasks Done!");
 }];
 ...
@@ -36,7 +36,7 @@
         XYAM_Log(@"Task %@ executed", obj);
 
         //2、当你完成一步操作的时候，告知manager你完成了一步操作，你可以完全不考虑当前是在什么线程内，只需要直接调用即可。
-        [[XYAsynchronousManager sharedManager] xy_synchronizeOneStepByIdentifier:@"oneGroup"];
+        [[XYAsynchronizationManager sharedManager] xy_synchronizeOneStepByIdentifier:@"oneGroup"];
     });
 }];
 ```
