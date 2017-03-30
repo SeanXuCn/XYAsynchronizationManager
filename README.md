@@ -44,3 +44,4 @@
 ## Communication
 - 有任何问题欢迎加我的简书和微博讨论
 - iOS入门级攻城尸的:[简书](http://www.jianshu.com/u/4c5a9f6f6831)、[微博](http://weibo.com/xuyang186)
+- PS:兄弟我英语水平一般,本来想要把注释和文档都写成英文的，但是无奈怕自己写好多病句出丑。有没有英语好的小伙伴参与翻译一下。Orz
