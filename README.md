@@ -41,7 +41,7 @@
 }];
 ```
 
-#### 单组并发操作
+#### ↓单组并发操作↓
 <p align="center" >
 <br />
 <img src="ezgif.com-video-to-gif.gif">
@@ -49,14 +49,14 @@
 <br />
 <br />
 
-#### 同时并发两组异步操作,互不影响,完成之后回调。
+#### ↓同时并发两组异步操作,互不影响,完成之后回调↓
 <p align="center" >
 <br />
 <img src="ezgif.com-video-to-gif-2.gif">
 </p>
 <br />
 
-#### 先同时并发两组操作,完成之后执行第三组操作。
+#### ↓先同时并发两组操作,完成之后执行第三组操作↓
 <p align="center" >
 <br />
 <img src="ezgif.com-video-to-gif-3.gif">
