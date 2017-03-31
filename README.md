@@ -40,6 +40,15 @@
     });
 }];
 ```
+<p align="center" >
+<img src="ezgif.com-video-to-gif.gif">
+</p>
+<p align="center" >
+<img src="ezgif.com-video-to-gif-2.gif">
+</p>
+<p align="center" >
+<img src="ezgif.com-video-to-gif-3.gif">
+</p>
 
 ## Communication
 - 有任何问题欢迎加我的简书和微博讨论
