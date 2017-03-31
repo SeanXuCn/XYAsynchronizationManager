@@ -40,13 +40,20 @@
     });
 }];
 ```
+
 <p align="center" >
+单组并发操作
 <img src="ezgif.com-video-to-gif.gif">
 </p>
+<br />
 <p align="center" >
+同时并发两组异步操作,互不影响,完成之后回调。
 <img src="ezgif.com-video-to-gif-2.gif">
 </p>
+<br />
+
 <p align="center" >
+先同时并发两组操作,完成之后执行第三组操作。
 <img src="ezgif.com-video-to-gif-3.gif">
 </p>
 
