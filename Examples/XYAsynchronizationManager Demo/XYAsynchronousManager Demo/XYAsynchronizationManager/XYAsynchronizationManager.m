@@ -64,9 +64,13 @@ static dispatch_queue_t XY_ASYNCHRONOUS_MANAGER_SERIAL_QUEUE(){
     if ([self.Synchronizers objectForKey:identifier] != nil) {
         XYAM_Log(@"XYAM: Identifier has already existed please ");
     }
-    XYSynchronizer *synchronizer =  [[XYSynchronizer alloc] initWithIdentifier:identifier totalCount:totalCount delegate:self progressBlock:progress doneBlock:doneBlock doneOnMainThread:onMineThread];
+    //在串行队列中有序创造和销毁XYSynchronizer。避免高并发时NSMutableDictionary的线程不安全行造成的错误
+    dispatch_async(XY_ASYNCHRONOUS_MANAGER_SERIAL_QUEUE(), ^{
+        XYSynchronizer *synchronizer =  [[XYSynchronizer alloc] initWithIdentifier:identifier totalCount:totalCount delegate:self progressBlock:progress doneBlock:doneBlock doneOnMainThread:onMineThread];
+        
+        [self.Synchronizers setObject:synchronizer forKey:identifier];
+    });
     
-    [self.Synchronizers setObject:synchronizer forKey:identifier];
 }
 
 
@@ -87,7 +91,7 @@ static dispatch_queue_t XY_ASYNCHRONOUS_MANAGER_SERIAL_QUEUE(){
     NSAssert(identifier != nil, @"XYAM: Identifier can not be nil");
     XYSynchronizer *synchronizer = [_Synchronizers objectForKey:identifier];
     if (nil == synchronizer) {
-        XYAM_Log(@"XYAM: Synchronizer not found");
+        XYAM_Log(@"XYAM: Synchronizer \"%@\" not found", identifier);
         return;
     }
     [synchronizer xy_synchronizeOneStep];
